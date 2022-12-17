@@ -22,11 +22,7 @@ export default {
   name: "App",
   data() {
     return {
-      todos: [
-        {id: '001', title: '吃饭', done: true},
-        {id: '002', title: '睡觉', done: false},
-        {id: '003', title: '抽烟', done: true}
-      ]
+      todos: []
     }
   },
   components: {MyHeader, MyFooter, MyItem, MyList},
@@ -58,6 +54,11 @@ export default {
       });
     }
   },
+  watch:{
+    todos(newValue,oldValue){
+      localStorage.setItem("todos",JSON.stringify(newValue))
+    }
+  }
 
 };
 </script>
