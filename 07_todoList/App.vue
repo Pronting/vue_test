@@ -22,7 +22,9 @@ export default {
   name: "App",
   data() {
     return {
-      todos: []
+      //由于todos是MyHeader组件和MyFooter组件都在适用，所以放在App中(状态提升)
+      // todos: []
+      todos: JSON.parse(localStorage.getItem("todos")) || []
     }
   },
   components: {MyHeader, MyFooter, MyItem, MyList},
@@ -47,16 +49,20 @@ export default {
         todo.done = done;
       })
     },
-  //  清楚所有已经完成的todo
-    clearAllTodo(){
+    //  清楚所有已经完成的todo
+    clearAllTodo() {
       this.todos = this.todos.filter((todo) => {
         return !todo.done
       });
     }
   },
-  watch:{
-    todos(newValue,oldValue){
-      localStorage.setItem("todos",JSON.stringify(newValue))
+  watch: {
+    todos: {
+      //必须开启深度监视才能够监视数组中对象里面的属性
+      deep: true,
+      handler(newValue, oldValue) {
+        localStorage.setItem("todos", JSON.stringify(newValue))
+      }
     }
   }
 
