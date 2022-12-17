@@ -1,24 +1,13 @@
-# vue_test
+# 笔记
 
-## Project setup
-```
-npm install
-```
+## 脚手架文件结构
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## 关于不同版本的Vue:
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## vue.config.js配置文件
+> 使用vue inspect >output.js 可以查看到Vue脚手架的默认配置
+> 使用vue.config.js可以对脚手架进行个性化定制
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## ref属性
+1. 被用来给元素或者子组件组测引用信息(id的代替者)
+2. 
