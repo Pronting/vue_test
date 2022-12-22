@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>localStorage</title>
+</head>
+<body>
+<h2>localStorage</h2>
+<button onclick="saveData()">点我保存一个数据</button>
+<button onclick="readData()">点我获得一个数据</button>
+<button onclick="deleteData()">点我删除一个数据</button>
+<button onclick="deleteAllData()">点我删除全部数据</button>
+
+</body>
+<script>
+
+    let p = {name: "张三", age: 18}
+    function saveData(){
+        // JSON.stringify 可以讲对象转换为对应的字符串
+        window.localStorage.setItem("person", JSON.stringify(p));
+    }
+    function  readData(){
+        console.log(localStorage.getItem("msg1"));
+        const result = localStorage.getItem('person')
+        //JSON.parse可以解析字符串为对象
+        console.log(JSON.parse(result));
+    }
+
+    function deleteData() {
+        localStorage.removeItem('msg1');
+    }
+
+    function deleteAllData(){
+        localStorage.clear();
+    }
+</script>
+</html>
