@@ -1,12 +1,17 @@
 <template>
-	<div class="container">
+	<div>
+    <Count/>
+    <hr/>
+    <Person/>
 	</div>
 </template>
 
 <script>
+import Count from "@/components/Count";
+import Person from "@/components/Person";
 	export default {
 		name:'App',
-		components:{},
+		components:{Count,Person},
     data(){
 		  return{
 
@@ -15,10 +20,5 @@
 	}
 </script>
 <style>
-.container{
-  /*设置弹性布局*/
-  display: flex;
-  /*主轴的对齐方式*/
-  justify-content: space-around;
-}
+
 </style>
